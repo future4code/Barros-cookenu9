@@ -20,8 +20,8 @@ export class UserBusiness {
                 throw new CustomError(400,'Very short name');
             }
 
-            if(password.length > 6){
-                throw new CustomError(400,'Fill in the fields "name", "email" and "password"');
+            if(password.length <= 6){
+                throw new CustomError(400,'Invalid password');
             }
             if (!email.includes("@")) {
                 throw new CustomError(400, "Invalid email address");
@@ -41,8 +41,7 @@ export class UserBusiness {
             await userDatabase.create(newUser)
 
             const token = tokenGenerator.generateToken({id})
-            console.log(id);
-            
+
             return (token)
 
         } catch (error: any) {

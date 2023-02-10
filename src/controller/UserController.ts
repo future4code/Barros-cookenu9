@@ -19,10 +19,10 @@ export class UserController {
 
             const token = await userBusiness.signup(insert)
         
-            res.status(201).send({ message: "Usuário criado!", token });
+            res.status(201).send(`access_token: ${token} `);
 
         } catch (error: any) {
-            throw new CustomError(400, error.message);
+            res.status(400).send(error.message);
         }
     }
 }
