@@ -10,7 +10,7 @@ export class UserController {
     public signup = async (req: Request, res: Response) => {
         try {
             const { name, email, password } = req.body
-
+  
             const insert: InputUserDTO = {
                 name,
                 email,
@@ -18,7 +18,7 @@ export class UserController {
             }
 
             const token = await userBusiness.signup(insert)
-
+        
             res.status(201).send({ message: "Usuário criado!", token });
 
         } catch (error: any) {

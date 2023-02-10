@@ -1,12 +1,14 @@
 import { UserDatabase } from "../data/UserDatabase";
 import { CustomError } from "../error/CustomError";
 import { InputUserDTO, UserDTO } from "../model/userDTO";
+import { HashGenerator } from "../services/HashGenerator";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
 
 const idGenerator = new IdGenerator();
 const tokenGenerator = new TokenGenerator();
 const userDatabase = new UserDatabase();
+const hashGenerator = new HashGenerator();
 export class UserBusiness {
 
     public signup = async ({ name, email, password }: InputUserDTO) => {
@@ -14,7 +16,7 @@ export class UserBusiness {
             if (!name || !email || !password) {
                 throw new CustomError(400,'Fill in the fields "name", "email" and "password"');
             }
-            if(name.length > 3){
+            if(name.length < 3){
                 throw new CustomError(400,'Very short name');
             }
 
@@ -27,16 +29,19 @@ export class UserBusiness {
 
             const  id = idGenerator.generateId()
 
+            const passwordHash = await hashGenerator.generateHash(password)
+
             const newUser:UserDTO = {
                 id,
                 name,
                 email,
-                password
+                password: passwordHash
             }
 
             await userDatabase.create(newUser)
 
-            const token = tokenGenerator.generateToken({id:id})
+            const token = tokenGenerator.generateToken({id})
+            console.log(id);
             
             return (token)
 

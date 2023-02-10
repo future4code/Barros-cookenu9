@@ -6,4 +6,4 @@ const userController = new UserController()
 
 
 // ENDPOINT CRIAR USUARIO
-userRouter.post("signup", userController.signup)
+userRouter.post("/signup", userController.signup)
