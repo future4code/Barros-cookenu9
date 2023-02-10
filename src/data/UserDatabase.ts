@@ -1,11 +1,11 @@
 import { CustomError } from "../error/CustomError";
-import { InputUserDTO } from "../model/userDTO";
+import { UserDTO } from "../model/userDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class UserDatabase extends BaseDatabase {
-    private static TABLE_NAME= "cookenu_users"
+    private static TABLE_NAME= "Cookenu_users"
 
-    create = async ({id,name,email,password}:InputUserDTO):Promise<void>=>{
+    create = async ({id,name,email,password}:UserDTO):Promise<void>=>{
         try{
             await UserDatabase.connection
             .insert({id,name,email,password})

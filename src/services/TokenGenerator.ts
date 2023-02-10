@@ -1,4 +1,5 @@
 import * as jwt from 'jsonwebtoken'
+import { AuthenticationData } from '../model/userDTO'
 
 export class TokenGenerator {
 
