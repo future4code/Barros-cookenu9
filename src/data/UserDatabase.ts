@@ -1,3 +1,4 @@
+import { CustomError } from "../error/CustomError";
 import { InputUserDTO } from "../model/userDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
@@ -11,7 +12,7 @@ export class UserDatabase extends BaseDatabase {
             .into(UserDatabase.TABLE_NAME)
 
         }catch(error:any){
-
+            throw new CustomError(400, error.message);
         }
     }
 }
