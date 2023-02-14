@@ -1,6 +1,12 @@
 export interface RecipeDTO{
-    id:String,
-    title:String,
-    description:String,
-    idAuthor:String
+    id:string,
+    title:string,
+    description:string,
+    idAuthor:string
+}
+
+export interface InputRecipeDTO{
+    title:string,
+    description:string,
+    idAuthor: string
 }
