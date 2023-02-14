@@ -6,3 +6,11 @@ CREATE TABLE IF NOT EXISTS Cookenu_users(
     password VARCHAR(64) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS Cookenu_recipe(
+    id VARCHAR(255) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id_author VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id_author) REFERENCES Cookenu_users (id)
+);

@@ -19,4 +19,16 @@ export class UserDatabase extends BaseDatabase {
             throw new CustomError(400, error.message);
         }
     }
+
+    getAll = async(email:string)=>{
+        try{
+        const result = await UserDatabase.connection.raw(`
+            SELECT email FROM ${UserDatabase.TABLE_NAME} WHERE email=${email}
+        `)
+        return (result)
+
+        }catch(error:any){
+            throw new CustomError(400, error.message);
+        }
+    }
 }

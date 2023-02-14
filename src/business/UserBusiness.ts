@@ -26,6 +26,11 @@ export class UserBusiness {
             if (!email.includes("@")) {
                 throw new CustomError(400, "Invalid email address");
             }
+            // const verificationEmail = await userDatabase.getAll(email)
+
+            // if(verificationEmail){
+            //     throw new CustomError(400, "Already have this email");
+            // }
 
             const  id = idGenerator.generateId()
 
