@@ -16,7 +16,18 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-    "email": "bianca@email.com",
-    "password": "123abc#"
+    "email": "camila@testando",
+    "password": "1234567"
+
+}
+
+###
+POST http://localhost:3003/recipe
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEtNDYyMC1iZGVkLWNjODliZTQyNWQ2NSIsImlhdCI6MTY3NjQxMjc5OCwiZXhwIjoxNjc2NDI3MTk4fQ.8tEMuwDXX7Q2770l30RY4lyIZK2BF4XwI1jXS6f0YDE
+
+{
+    "title": "Bolo de banana",
+    "description": "banana aveia canela acucar"
 
 }
