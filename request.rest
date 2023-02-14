@@ -3,6 +3,7 @@ POST http://localhost:3003/signup
 Content-Type: application/json
 
 {
+
     "name":"Bianca Paccola",
     "email":"bianca@email.com",
     "password":"123abc#"
@@ -17,4 +18,5 @@ Content-Type: application/json
 {
     "email": "bianca@email.com",
     "password": "123abc#"
+
 }
