@@ -16,7 +16,7 @@ export class UserDatabase extends BaseDatabase {
             }).into(UserDatabase.TABLE_NAME)
 
         }catch(error:any){
-            throw new CustomError(400, error.message);
+            throw new CustomError(400, error.message || error.sqlMessage);
         }
     }
 
@@ -28,7 +28,7 @@ export class UserDatabase extends BaseDatabase {
         return (result)
 
         }catch(error:any){
-            throw new CustomError(400, error.message);
+            throw new CustomError(400, error.message || error.sqlMessage);
         }
     }
 }
