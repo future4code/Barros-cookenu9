@@ -1,6 +1,7 @@
 import { UserDatabase } from "../data/UserDatabase";
 import { CustomError } from "../error/CustomError";
-import { InputUserDTO, UserDTO } from "../model/userDTO";
+import { UserIncompleteData, UserIncorrectPassword, UserInvalidEmail, UserInvalidPassword, UserNotFound } from "../error/UserErrors";
+import { InputUserDTO, UserDTO, userLoginDTO } from "../model/userDTO";
 import { HashGenerator } from "../services/HashGenerator";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
@@ -48,5 +49,38 @@ export class UserBusiness {
             throw new CustomError(400, error.message);
         }
 
+    }
+
+    public async login ({email, password}:userLoginDTO ) {
+        try {
+            if(!email || !password) {
+                throw new UserIncompleteData()
+            }
+            if (!email.includes("@" )) {
+                throw new UserInvalidEmail()
+            }
+            if (password.length <= 6) {
+                throw new UserInvalidPassword()
+            }
+
+            const user = await userDatabase.findByEmail(email)
+
+            if(!user) {
+                throw new UserNotFound()
+            }
+
+            const comparePassword: boolean = await hashGenerator.compareHash(password, user.password)
+
+            if (!comparePassword) {
+                throw new UserIncorrectPassword()
+            }
+
+            const token = await tokenGenerator.generateToken({id: user.id})
+            
+            return token;
+
+        } catch (error:any) {
+            throw new CustomError(400, error.message);
+        }
     }
 }

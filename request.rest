@@ -1,8 +1,20 @@
+// Signup - Criar cadastro de usuário
 POST http://localhost:3003/signup
 Content-Type: application/json
 
 {
-    "name":"Carmem lucia",
-    "email":"camila@testando",
-    "password":"1234567"
+    "name":"Bianca Paccola",
+    "email":"bianca@email.com",
+    "password":"123abc#"
+}
+
+###
+
+// Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "bianca@email.com",
+    "password": "123abc#"
 }
