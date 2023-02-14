@@ -31,4 +31,17 @@ export class UserDatabase extends BaseDatabase {
             throw new CustomError(400, error.message || error.sqlMessage);
         }
     }
+
+    public async findByEmail (email: string) {
+        try {
+            const user = await UserDatabase.connection
+                         .select('*')
+                         .where({email})
+                         .into(UserDatabase.TABLE_NAME)
+
+            return user[0];
+        } catch (error:any) {
+            throw new CustomError(400, error.message || error.sqlMessage);
+        }
+    }
 }
