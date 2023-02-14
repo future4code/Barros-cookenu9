@@ -13,7 +13,7 @@ export class RecipeDatabase extends BaseDatabase{
                 title,
                 description,
                 id_author:idAuthor
-            })
+            }).into(RecipeDatabase.TABLE_NAME)
 
 
         }catch(error:any){
