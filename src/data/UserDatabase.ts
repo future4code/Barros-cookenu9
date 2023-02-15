@@ -32,7 +32,7 @@ export class UserDatabase extends BaseDatabase {
         }
     }
 
-    public async findByEmail (email: string) {
+    public async findByEmail (email: string):Promise<UserDTO> {
         try {
             const user = await UserDatabase.connection
                          .select('*')
@@ -40,6 +40,17 @@ export class UserDatabase extends BaseDatabase {
                          .into(UserDatabase.TABLE_NAME)
 
             return user[0];
+        } catch (error:any) {
+            throw new CustomError(400, error.message || error.sqlMessage);
+        }
+    }
+
+    public async changePassword (id:string, newPassword:string) {
+        try {
+           await UserDatabase.connection
+                 .where({id}) 
+                 .update({password: newPassword})
+                 .into(UserDatabase.TABLE_NAME)
         } catch (error:any) {
             throw new CustomError(400, error.message || error.sqlMessage);
         }

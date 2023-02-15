@@ -26,13 +26,23 @@ export class UserController {
         }
     }
 
-    public async login (req: Request, res: Response) {
+    public async login (req: Request, res: Response): Promise<void> {
         try {
             const {email, password} = req.body
             const token = await userBusiness.login({email, password})
 
             res.status(200).send({token: token})
 
+        } catch (error:any) {
+            res.status(400).send(error.message); 
+        }
+    }
+
+    public async forgotPassword (req: Request, res: Response):Promise<void> {
+        try {
+            const email: string = req.body.email
+            await userBusiness.forgotPassword(email)
+            res.status(200).send({message: "A new password has been sent to the email."})
         } catch (error:any) {
             res.status(400).send(error.message); 
         }

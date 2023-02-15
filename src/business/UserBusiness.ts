@@ -1,10 +1,12 @@
 import { UserDatabase } from "../data/UserDatabase";
 import { CustomError } from "../error/CustomError";
-import { UserIncompleteData, UserIncorrectPassword, UserInvalidEmail, UserInvalidPassword, UserNotFound } from "../error/UserErrors";
+import { UserMissingEmail, UserIncompleteData, UserIncorrectPassword, UserInvalidEmail, UserInvalidPassword, UserNotFound } from "../error/UserErrors";
 import { InputUserDTO, UserDTO, userLoginDTO } from "../model/userDTO";
 import { HashGenerator } from "../services/HashGenerator";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
+import { passwordGenerate } from "../utils/passwordGenerate";
+import sendNodemailer from "../services/Nodemailer"
 
 const idGenerator = new IdGenerator();
 const tokenGenerator = new TokenGenerator();
@@ -56,7 +58,7 @@ export class UserBusiness {
 
     }
 
-    public async login ({email, password}:userLoginDTO ) {
+    public async login ({email, password}:userLoginDTO ):Promise<string> {
         try {
             if(!email || !password) {
                 throw new UserIncompleteData()
@@ -84,6 +86,31 @@ export class UserBusiness {
             
             return token;
 
+        } catch (error:any) {
+            throw new CustomError(400, error.message);
+        }
+    }
+
+    public async forgotPassword (email: string): Promise<void> {
+        try {
+            if(!email) {
+                throw new UserMissingEmail()
+            }
+
+            if(!email.includes('@')) {
+                throw new UserInvalidEmail()
+            }
+
+           const user = await userDatabase.findByEmail(email);
+           if (!user) {
+            throw new UserNotFound;
+           } 
+
+           const newPassword = passwordGenerate().toString()
+           const passwordHash = await hashGenerator.generateHash(newPassword)
+           await userDatabase.changePassword(user.id, passwordHash);
+           await sendNodemailer(email, newPassword)
+           
         } catch (error:any) {
             throw new CustomError(400, error.message);
         }
