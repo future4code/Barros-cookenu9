@@ -20,7 +20,7 @@ Content-Type: application/json
     "password": "1234567"
 
 }
-
+// Criar receitas
 ###
 POST http://localhost:3003/recipe
 Content-Type: application/json
@@ -31,3 +31,5 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEt
     "description": "banana aveia canela acucar"
 
 }
+
+###
