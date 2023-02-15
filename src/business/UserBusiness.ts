@@ -64,7 +64,7 @@ export class UserBusiness {
             if (!email.includes("@" )) {
                 throw new UserInvalidEmail()
             }
-            if (password.length <= 6) {
+            if (password.length <= 5) {
                 throw new UserInvalidPassword()
             }
 

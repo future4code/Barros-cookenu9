@@ -16,6 +16,9 @@ export class FollowBusiness {
             if (!followId) {
                 throw new CustomError(400, 'Fill in the fields "followId"');
             }
+            if(followId === undefined){
+                throw new CustomError(400, 'Fill in the fields "followId"');
+            }
             const idUserToken = tokenGenerator.tokenData(userId)
 
             const idFollow = idGenerator.generateId()
