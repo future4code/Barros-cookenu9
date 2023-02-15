@@ -7,6 +7,5 @@ import { userRouter } from "./routes/userRouter";
 app.use("", userRouter)
 
 
-
 // ENDPOINT CRIAR RECEITA
 app.use("", recipeRouter)
