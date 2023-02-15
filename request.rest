@@ -5,7 +5,7 @@ Content-Type: application/json
 {
 
     "name":"Bianca Paccola",
-    "email":"bianca@email.com",
+    "email":"bianca.paccola@gmail.com",
     "password":"123abc#"
 }
 
@@ -16,12 +16,14 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-    "email": "camila@testando",
-    "password": "1234567"
+    "email": "bianca.paccola@gmail.com",
+    "password": "w5glbr6"
 
 }
 
 ###
+
+// Criar receita
 POST http://localhost:3003/recipe
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEtNDYyMC1iZGVkLWNjODliZTQyNWQ2NSIsImlhdCI6MTY3NjQxMjc5OCwiZXhwIjoxNjc2NDI3MTk4fQ.8tEMuwDXX7Q2770l30RY4lyIZK2BF4XwI1jXS6f0YDE
@@ -30,4 +32,14 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEt
     "title": "Bolo de banana",
     "description": "banana aveia canela acucar"
 
+}
+
+###
+
+// Esqueci a senha
+PUT http://localhost:3003/forgot-password
+Content-Type: application/json
+
+{
+    "email": "bianca.paccola@gmail.com"
 }

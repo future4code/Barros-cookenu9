@@ -6,6 +6,13 @@ export class UserIncompleteData extends CustomError {
     }
 } 
 
+export class UserMissingEmail extends CustomError {
+    constructor() {
+        super(422, "You must send the email")
+    }
+}
+
+
 export class UserInvalidEmail extends CustomError {
     constructor() {
         super(422, "Invalid Email")
