@@ -5,8 +5,10 @@ import { BaseDatabase } from "./BaseDatabase";
 export class FollowDatabase extends BaseDatabase {
     private static TABLE_NAME: string = "Cookenu_follow"
 
-    create = async ({ id, userId, followId }: FollowDTO) => {
+    create = async (input: FollowDTO):Promise<void> => {
         try {
+            const {id, userId, followId} = input
+
             await FollowDatabase.connection.insert({
                 id: id,
                 user_id: userId,

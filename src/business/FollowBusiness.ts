@@ -19,7 +19,8 @@ export class FollowBusiness {
             }
 
             const idUserToken = tokenGenerator.tokenData(userId)
-
+            // console.log(idUserToken.id);
+            
             const idFollow = idGenerator.generateId()
 
             await followDatabase.create({

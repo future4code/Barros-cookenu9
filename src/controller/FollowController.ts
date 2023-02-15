@@ -4,17 +4,19 @@ import { InputFollowDTO } from "../model/followDTO";
 
 const followBusiness = new FollowBusiness();
 
-export class FollwController {
-    createFollw = async (req: Request, res: Response): Promise<void> => {
+export class FollowController {
+    createFollow = async (req: Request, res: Response): Promise<void> => {
         try {
 
             const userId = req.headers.authorization as string;
-            const idFollow = req.body.idFollow
+            const  followId = req.body.followId
 
             const create:InputFollowDTO = {
                 userId:userId,
-                followId:idFollow
+                followId:followId
             }
+            // console.log(create);
+            
             await followBusiness.createFollow(create)
 
             res.status(201).send({ message: "Follow created successfully!" })

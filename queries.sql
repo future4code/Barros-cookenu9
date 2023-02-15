@@ -17,8 +17,9 @@ CREATE TABLE IF NOT EXISTS Cookenu_recipe(
 
 CREATE Table IF NOT EXISTS Cookenu_follow(
     id VARCHAR(255) PRIMARY KEY,
-    user_id VARCHAR(255) NOT NULL,
-    follow_id VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Cookenu_users (id),
-    FOREIGN KEY (follow_id) REFERENCES Cookenu_users (id)
+    user_id VARCHAR(255),
+    follow_id VARCHAR(255) ,
+    FOREIGN KEY (user_id) REFERENCES Cookenu_users(id),
+    FOREIGN KEY (follow_id) REFERENCES Cookenu_users(id)
 );
+

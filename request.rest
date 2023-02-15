@@ -33,3 +33,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEt
 }
 
 ###
+POST http://localhost:3003/follow
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEtNDYyMC1iZGVkLWNjODliZTQyNWQ2NSIsImlhdCI6MTY3NjQ3NjAxMCwiZXhwIjoxNjc2NDkwNDEwfQ.Uc9kuilNia3F2tRgeEVZZCRyzkSKeG8vRbLJHZ8O1yU
+
+{
+    "followId": "c8ff9401-dd13-44f2-9c36-ddbf173006a3"
+}
