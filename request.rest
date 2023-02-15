@@ -10,6 +10,11 @@ Content-Type: application/json
 }
 
 ###
+// Retorna todos os usuários cadastrados no banco de dados
+GET http://localhost:3003/all
+
+###
+
 
 // Login
 POST http://localhost:3003/login

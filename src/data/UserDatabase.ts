@@ -20,11 +20,11 @@ export class UserDatabase extends BaseDatabase {
         }
     }
 
-    getAll = async(email:string)=>{
+    getAll = async()=>{
         try{
-        const result = await UserDatabase.connection.raw(`
-            SELECT email FROM ${UserDatabase.TABLE_NAME} WHERE email=${email}
-        `)
+        const result = await UserDatabase.connection
+        .select()
+        .from(UserDatabase.TABLE_NAME)
         return (result)
 
         }catch(error:any){

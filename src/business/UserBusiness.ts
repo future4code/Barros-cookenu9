@@ -115,4 +115,13 @@ export class UserBusiness {
             throw new CustomError(400, error.message);
         }
     }
+
+    getAll = async() => {
+        try {
+            return await userDatabase.getAll()
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);
+        }
+
+    }
 }

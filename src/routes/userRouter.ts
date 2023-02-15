@@ -13,3 +13,6 @@ userRouter.post("/login", userController.login)
 
 //ENDPOINT PARA ENVIAR UMA SENHA NOVA POR EMAIL - ESQUECI MINHA SENHA
 userRouter.put("/forgot-password", userController.forgotPassword)
+
+//ENDPOINT PARA RETORNAR TODOS OS USUÁRIOS
+userRouter.get("/all", userController.getAll)
