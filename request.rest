@@ -16,8 +16,8 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-    "email": "camila@testando",
-    "password": "1234567"
+    "email": "bianca@email.com",
+    "password": "123abc#"
 
 }
 // Criar receitas
@@ -35,8 +35,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEt
 ###
 POST http://localhost:3003/follow
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEtNDYyMC1iZGVkLWNjODliZTQyNWQ2NSIsImlhdCI6MTY3NjQ3NjAxMCwiZXhwIjoxNjc2NDkwNDEwfQ.Uc9kuilNia3F2tRgeEVZZCRyzkSKeG8vRbLJHZ8O1yU
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBiYTc5NWM5LTBlNGYtNGNkYi04ZTY1LTA2YzJiNDUxZWIxMSIsImlhdCI6MTY3NjQ3OTUwOCwiZXhwIjoxNjc2NDkzOTA4fQ._js7FKv4PMYsP3Jv7HzeLUdxLdgB1Wkj7JMf6aNSRx4
 
 {
-    "followId": "c8ff9401-dd13-44f2-9c36-ddbf173006a3"
+    "followId":"72f25832-3249-44d3-bb14-5de2ec7da0d2"
 }
