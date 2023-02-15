@@ -3,7 +3,7 @@
 Enunciado Projeto:</br>
 Esse produto nada mais é do que uma rede social, na qual os usuários podem dividir informações relevantes sobre comidas e receitas que tenham experimentado. Ela possui todas as funcionalidades mais comuns em redes sociais:
 
-<h3 align="center" >Funcionalidades:</br></h3>
+<h3 align="center" > 💻 Funcionalidades:</br></h3>
 ✅ Cadastrar pessoas usuária;</br>
 ✅ Login;</br>
 ⬛ Informações do próprio perfil;</br>
