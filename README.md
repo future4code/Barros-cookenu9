@@ -8,7 +8,7 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 ✅ Login;</br>
 ⬛ Informações do próprio perfil;</br>
 ✅ Criar receitas;</br>
-⬛ Seguir usuários;</br>
+✅ Seguir usuários;</br>
 ⬛ Feed</br>
 
 ---
@@ -33,8 +33,6 @@ Caso queira rodar o projeto localmente, as instruções são:
 
 ```
 git clone https://github.com/future4code/Barros-labook3.git
-
-cd Barros-labook3 -> para entrar na pasta raiz do projeto
 
 npm install -> para instalar as dependências do projeto
 
