@@ -8,7 +8,7 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 ✅ Login;</br>
 ⬛ Informações do próprio perfil;</br>
 ✅ Criar receitas;</br>
-⬛ Seguir usuários;</br>
+✅ Seguir usuários;</br>
 ⬛ Feed</br>
 
 ---
