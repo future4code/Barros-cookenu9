@@ -32,13 +32,13 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 Caso queira rodar o projeto localmente, as instruções são:
 
 ```
-git clone https://github.com/future4code/Barros-labook3.git
+git clone https://github.com/future4code/Barros-cookenu9.git
 
 npm install -> para instalar as dependências do projeto
 
 criar um arquivo .env com as informações do seus banco de dados
 
-npm run migrations -> para criar as tabelas no seu banco de dados
+executar as queries do arquivo queries.sql para criar as tabelas
 
 npm run dev -> para rodar o servidor
 Instruções para preencher o arquivo dotenv:
