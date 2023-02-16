@@ -16,3 +16,5 @@ userRouter.put("/forgot-password", userController.forgotPassword)
 
 //ENDPOINT PARA RETORNAR TODOS OS USUÁRIOS
 userRouter.get("/all", userController.getAll)
+
+userRouter.get("/user", userController.getById)

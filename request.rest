@@ -48,3 +48,9 @@ Content-Type: application/json
 {
     "email": "bianca.paccola@gmail.com"
 }
+
+###
+
+GET http://localhost:3003/user
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMDMwMSwiZXhwIjoxNjc2NTI0NzAxfQ.YGwjMffJ363AxdlU7TtPH1k7uHtLbQaI_dGIV15Oxhg

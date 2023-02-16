@@ -1,7 +1,7 @@
 import { UserDatabase } from "../data/UserDatabase";
 import { CustomError } from "../error/CustomError";
 import { UserMissingEmail, UserIncompleteData, UserIncorrectPassword, UserInvalidEmail, UserInvalidPassword, UserNotFound } from "../error/UserErrors";
-import { InputUserDTO, UserDTO, userLoginDTO } from "../model/userDTO";
+import { AuthenticationData, InputUserDTO, UserDTO, userLoginDTO } from "../model/userDTO";
 import { HashGenerator } from "../services/HashGenerator";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
@@ -123,5 +123,23 @@ export class UserBusiness {
             throw new Error(error.message || error.sqlMessage);
         }
 
+    }
+
+    getById = async(token:string) => {
+        try {
+            if (!token) {
+                throw new Error("Missing authorization");
+            }
+            let id:AuthenticationData = tokenGenerator.tokenData(token)
+            let userId:any = await userDatabase.checkIfExists(id.id)
+            userId=JSON.parse(JSON.stringify(userId))
+            
+            if (userId[0].id !== id.id) {
+                throw new CustomError(400, "Token is invalid");
+            }
+            return await userDatabase.getById(id.id)
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);
+        }
     }
 }

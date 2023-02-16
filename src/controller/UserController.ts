@@ -57,4 +57,14 @@ export class UserController {
             
         }
     }
+    
+    getById = async(req:Request, res:Response) => {
+        try {
+            let token = req.headers.authorization as string 
+            let result = await userBusiness.getById(token)
+            res.status(200).send(result)
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);
+        }
+    }
 }
