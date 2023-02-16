@@ -26,4 +26,14 @@ export class RecipeController {
             res.status(400).send(error.message);
         }
     }
+
+    getRecipes = async(req:Request, res:Response) => {
+        try {
+            let token = req.headers.authorization as string
+            let result = await recipeBusiness.getRecipes(token)
+            res.status(200).send(result)
+        }catch(error:any){
+            throw new Error(error.message || error.sqlMessage);
+        }
+    }
 }

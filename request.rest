@@ -31,11 +31,11 @@ Content-Type: application/json
 // Criar receita
 POST http://localhost:3003/recipe
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEtNDYyMC1iZGVkLWNjODliZTQyNWQ2NSIsImlhdCI6MTY3NjQxMjc5OCwiZXhwIjoxNjc2NDI3MTk4fQ.8tEMuwDXX7Q2770l30RY4lyIZK2BF4XwI1jXS6f0YDE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMzU2MywiZXhwIjoxNjc2NTI3OTYzfQ.57tIymx6FtxvsuuheQHmfh4mK-WDHI1cUU2sfR0_2gM
 
 {
-    "title": "Bolo de banana",
-    "description": "banana aveia canela acucar"
+    "title": "Brigadeiro",
+    "description": "Misture uma colher de manteiga com uma caixa de leite condensado, quatro colheres de achocolatado e misture até desgrudar da panela"
 
 }
 
@@ -54,3 +54,9 @@ Content-Type: application/json
 GET http://localhost:3003/user
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMDMwMSwiZXhwIjoxNjc2NTI0NzAxfQ.YGwjMffJ363AxdlU7TtPH1k7uHtLbQaI_dGIV15Oxhg
+
+###
+
+GET http://localhost:3003/all-recipes
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMzU2MywiZXhwIjoxNjc2NTI3OTYzfQ.57tIymx6FtxvsuuheQHmfh4mK-WDHI1cUU2sfR0_2gM

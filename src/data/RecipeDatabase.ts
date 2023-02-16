@@ -20,4 +20,16 @@ export class RecipeDatabase extends BaseDatabase{
             throw new CustomError(400, error.message || error.sqlMessage);
         }
     }
+    getRecipes = async(id:string) => {
+        try {
+            let result = await RecipeDatabase.connection
+            .select()
+            .where('id_author', id)
+            .from(RecipeDatabase.TABLE_NAME)
+            return result
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);
+            
+        }
+    }
 }

@@ -1,6 +1,7 @@
 import { RecipeDatabase } from "../data/RecipeDatabase";
 import { CustomError } from "../error/CustomError";
 import { InputRecipeDTO } from "../model/recipeDTO";
+import { AuthenticationData } from "../model/userDTO";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
 
@@ -32,6 +33,19 @@ export class RecipeBusiness {
 
         } catch (error: any) {
             throw new CustomError(400, error.message);
+        }
+    }
+
+    getRecipes = async(token:string) => {
+        try {
+            if (!token) {
+                throw new Error("Missing authorization");
+            }
+            let id:AuthenticationData = tokenGenerator.tokenData(token)
+            return await recipeDatabase.getRecipes(id.id)
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);
+            
         }
     }
 }
