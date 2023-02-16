@@ -3,13 +3,18 @@
 Enunciado Projeto:</br>
 Esse produto nada mais é do que uma rede social, na qual os usuários podem dividir informações relevantes sobre comidas e receitas que tenham experimentado. Ela possui todas as funcionalidades mais comuns em redes sociais:
 
-<h3 align="center" >Funcionalidades:</br></h3>
+<h3 align="center" > 💻 Funcionalidades:</br></h3>
 ✅ Cadastrar pessoas usuária;</br>
 ✅ Login;</br>
 ⬛ Informações do próprio perfil;</br>
 ✅ Criar receitas;</br>
 ✅ Seguir usuários;</br>
+
 ⬛ Feed</br>
+
+⬛ Alimentação</br>
+✅ Esqueceu senha;</br>
+
 
 ---
 
@@ -33,8 +38,6 @@ Caso queira rodar o projeto localmente, as instruções são:
 
 ```
 git clone https://github.com/future4code/Barros-labook3.git
-
-cd Barros-labook3 -> para entrar na pasta raiz do projeto
 
 npm install -> para instalar as dependências do projeto
 
