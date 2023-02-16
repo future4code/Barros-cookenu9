@@ -9,7 +9,12 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 ⬛ Informações do próprio perfil;</br>
 ✅ Criar receitas;</br>
 ✅ Seguir usuários;</br>
+
 ⬛ Feed</br>
+
+⬛ Alimentação</br>
+✅ Esqueceu senha;</br>
+
 
 ---
 

@@ -23,9 +23,8 @@ Content-Type: application/json
 {
     "email": "bianca.paccola@gmail.com",
     "password": "w5glbr6"
-
 }
-
+// Criar receitas
 ###
 
 // Criar receita
@@ -41,12 +40,24 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUt
 
 ###
 
+POST http://localhost:3003/follow
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBiYTc5NWM5LTBlNGYtNGNkYi04ZTY1LTA2YzJiNDUxZWIxMSIsImlhdCI6MTY3NjQ3OTUwOCwiZXhwIjoxNjc2NDkzOTA4fQ._js7FKv4PMYsP3Jv7HzeLUdxLdgB1Wkj7JMf6aNSRx4
+
+{
+    "followId":"72f25832-3249-44d3-bb14-5de2ec7da0d2"
+
+}
+
+
+###
 // Esqueci a senha
 PUT http://localhost:3003/forgot-password
 Content-Type: application/json
 
 {
     "email": "bianca.paccola@gmail.com"
+
 }
 
 ###
