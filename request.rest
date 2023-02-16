@@ -40,15 +40,13 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUt
 
 ###
 
-// Recupera os dados de um seguidor com autorização.
+// Retorna os dados de um seguidor com autorização.
 POST http://localhost:3003/follow
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjUxOTEyNCwiZXhwIjoxNjc2NTMzNTI0fQ.ipKOXoOoLRaCw5VN_-nDrpKNXek82D7emTD3CwQ9G4Q
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU4NDA5MCwiZXhwIjoxNjc2NTk4NDkwfQ.HX4UKBaHhfOsnEr16sAsnNE--2Od3ef_BpfZmSCIOI8
 
 {
-    "followId":"99d42e70-d95e-47ac-a8f8-1f10eae22f8f"
-
-
+    "followId":"72f25832-3249-44d3-bb14-5de2ec7da0d2"
 }
 
 
@@ -64,11 +62,10 @@ Content-Type: application/json
 
 ###
 
-// Recupera dados confidenciais de um usuário com a autorização concedida pelo token.
+// Retorna dados confidenciais de um usuário com a autorização concedida pelo token.
 GET http://localhost:3003/user
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU3MDU2NywiZXhwIjoxNjc2NTg0OTY3fQ.X7xCSF2HirlWg6Z87ItONyTqClGvvuY-yZ1ZW0Sj9Xw
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU4NDA5MCwiZXhwIjoxNjc2NTk4NDkwfQ.HX4UKBaHhfOsnEr16sAsnNE--2Od3ef_BpfZmSCIOI8
 ###
 
 // Obtenha as receitas de um usuário específico utilizando o seu token de acesso.
@@ -79,6 +76,12 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtN
 
 ###
 
-// Recuperar a lista de relações entre quem segue e quem é seguido.
+// Retornar a lista de relações entre quem segue e quem é seguido.
 GET http://localhost:3003/all-followers
 Content-Type: application/json
+
+###
+
+GET http://localhost:3003/my-feed 
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU4NDA5MCwiZXhwIjoxNjc2NTk4NDkwfQ.HX4UKBaHhfOsnEr16sAsnNE--2Od3ef_BpfZmSCIOI8
