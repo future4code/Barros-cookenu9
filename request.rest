@@ -21,8 +21,8 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-    "email": "lbsouza@gmail.com",
-    "password": "teste_cript"
+    "email": "bianca.paccola@gmail.com",
+    "password": "w5glbr6"
 }
 // Criar receitas
 ###
@@ -35,7 +35,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUt
 {
     "title": "Brigadeiro",
     "description": "Misture uma colher de manteiga com uma caixa de leite condensado, quatro colheres de achocolatado e misture até desgrudar da panela"
-
 }
 
 ###
@@ -43,7 +42,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUt
 // Retorna os dados de um seguidor com autorização.
 POST http://localhost:3003/follow
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU4NDA5MCwiZXhwIjoxNjc2NTk4NDkwfQ.HX4UKBaHhfOsnEr16sAsnNE--2Od3ef_BpfZmSCIOI8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjU4OTkwMSwiZXhwIjoxNjc2NjA0MzAxfQ.ByBArZVRpdjDoO1Ul3vvpCwOP5um09NPwO5Adar0Cew
 
 {
     "followId":"72f25832-3249-44d3-bb14-5de2ec7da0d2"
@@ -84,4 +83,4 @@ Content-Type: application/json
 
 GET http://localhost:3003/my-feed 
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU4NDA5MCwiZXhwIjoxNjc2NTk4NDkwfQ.HX4UKBaHhfOsnEr16sAsnNE--2Od3ef_BpfZmSCIOI8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjU4OTkwMSwiZXhwIjoxNjc2NjA0MzAxfQ.ByBArZVRpdjDoO1Ul3vvpCwOP5um09NPwO5Adar0Cew
