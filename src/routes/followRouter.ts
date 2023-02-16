@@ -8,3 +8,5 @@ const followController = new FollowController()
 
 // ENDPOINT CRIAR RECEITA
 followRouter.post("/follow", followController.createFollow)
+
+followRouter.get("/all-followers", followController.getAll)

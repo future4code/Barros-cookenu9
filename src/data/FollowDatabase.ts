@@ -20,7 +20,7 @@ export class FollowDatabase extends BaseDatabase {
         }
     }
 
-    getAll = async ({ userId, followId }: InputFollowDTO) => {
+    getById = async ({ userId, followId }: InputFollowDTO) => {
         try {
 
             const result = await FollowDatabase.connection()
@@ -36,6 +36,17 @@ export class FollowDatabase extends BaseDatabase {
 
         } catch (error: any) {
             throw new CustomError(400, error.message || error.sqlMessage);
+        }
+    }
+    getAll = async():Promise<FollowDTO[]> => {
+        try {
+            let result:FollowDTO[] = await FollowDatabase.connection
+            .select()
+            .from(FollowDatabase.TABLE_NAME)
+            return result
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);
+            
         }
     }
 }

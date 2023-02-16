@@ -23,7 +23,7 @@ export class FollowBusiness {
 
             const idFollow = idGenerator.generateId()
 
-            const verificationUserId = await followDatabase.getAll({ userId: idUserToken.id, followId: followId })
+            const verificationUserId = await followDatabase.getById({ userId: idUserToken.id, followId: followId })
 
             if (verificationUserId === undefined) {
                
@@ -40,6 +40,17 @@ export class FollowBusiness {
 
         } catch (error: any) {
             throw new CustomError(400, error.message);
+        }
+    }
+    getAll = async () => {
+        try {
+            let result:FollowDTO[] = await followDatabase.getAll()
+            if (result.length <= 0) {
+                throw new CustomError(404, "No followers yet");
+            }
+            return result
+        } catch (error) {
+            
         }
     }
 }
