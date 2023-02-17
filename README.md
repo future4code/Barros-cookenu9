@@ -9,9 +9,8 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 ✅ Informações do próprio perfil;</br>
 ✅ Criar receitas;</br>
 ✅ Seguir usuários;</br>
+✅ Deixar de seguir usuários;</br>
 ✅ Feed (vizualiza somente receitas de amigos);</br>
-
-⬛ Alimentação</br>
 ✅ Esqueceu senha;</br>
 Extra para facilitar testes:
 ✅ Buscar todos usuários (Ps: precisa saber a senha para logar com ele pois estão criptografadas.);</br>
