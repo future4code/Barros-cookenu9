@@ -1,10 +1,10 @@
-export interface FollowDTO{
+export interface FollowDTO {
     id: string;
     userId: string;
     followId: string;
 }
 
-export interface InputFollowDTO{
+export interface InputFollowDTO {
     userId: string;
     followId: string;
 }

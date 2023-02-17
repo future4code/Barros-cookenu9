@@ -17,29 +17,24 @@ export class UserBusiness {
     public signup = async ({ name, email, password }: InputUserDTO) => {
         try {
             if (!name || !email || !password) {
-                throw new CustomError(400,'Fill in the fields "name", "email" and "password"');
+                throw new CustomError(400, 'Fill in the fields "name", "email" and "password"');
             }
-            if(name.length < 3){
-                throw new CustomError(400,'Very short name');
+            if (name.length < 3) {
+                throw new CustomError(400, 'Very short name');
             }
 
-            if(password.length <= 6){
-                throw new CustomError(400,'Invalid password');
+            if (password.length <= 6) {
+                throw new CustomError(400, 'Invalid password');
             }
             if (!email.includes("@")) {
                 throw new CustomError(400, "Invalid email address");
             }
-            // const verificationEmail = await userDatabase.getAll(email)
 
-            // if(verificationEmail){
-            //     throw new CustomError(400, "Already have this email");
-            // }
-
-            const  id = idGenerator.generateId()
+            const id = idGenerator.generateId()
 
             const passwordHash = await hashGenerator.generateHash(password)
 
-            const newUser:UserDTO = {
+            const newUser: UserDTO = {
                 id,
                 name,
                 email,
@@ -48,7 +43,7 @@ export class UserBusiness {
 
             await userDatabase.create(newUser)
 
-            const token = tokenGenerator.generateToken({id})
+            const token = tokenGenerator.generateToken({ id })
 
             return (token)
 
@@ -58,12 +53,12 @@ export class UserBusiness {
 
     }
 
-    public async login ({email, password}:userLoginDTO ):Promise<string> {
+    public async login({ email, password }: userLoginDTO): Promise<string> {
         try {
-            if(!email || !password) {
+            if (!email || !password) {
                 throw new UserIncompleteData()
             }
-            if (!email.includes("@" )) {
+            if (!email.includes("@")) {
                 throw new UserInvalidEmail()
             }
             if (password.length <= 5) {
@@ -72,7 +67,7 @@ export class UserBusiness {
 
             const user = await userDatabase.findByEmail(email)
 
-            if(!user) {
+            if (!user) {
                 throw new UserNotFound()
             }
 
@@ -82,63 +77,63 @@ export class UserBusiness {
                 throw new UserIncorrectPassword()
             }
 
-            const token = await tokenGenerator.generateToken({id: user.id})
-            
+            const token = await tokenGenerator.generateToken({ id: user.id })
+
             return token;
 
-        } catch (error:any) {
+        } catch (error: any) {
             throw new CustomError(400, error.message);
         }
     }
 
-    public async forgotPassword (email: string): Promise<void> {
+    public async forgotPassword(email: string): Promise<void> {
         try {
-            if(!email) {
+            if (!email) {
                 throw new UserMissingEmail()
             }
 
-            if(!email.includes('@')) {
+            if (!email.includes('@')) {
                 throw new UserInvalidEmail()
             }
 
-           const user = await userDatabase.findByEmail(email);
-           if (!user) {
-            throw new UserNotFound;
-           } 
+            const user = await userDatabase.findByEmail(email);
+            if (!user) {
+                throw new UserNotFound;
+            }
 
-           const newPassword = passwordGenerate().toString()
-           const passwordHash = await hashGenerator.generateHash(newPassword)
-           await userDatabase.changePassword(user.id, passwordHash);
-           await sendNodemailer(email, newPassword)
-           
-        } catch (error:any) {
+            const newPassword = passwordGenerate().toString()
+            const passwordHash = await hashGenerator.generateHash(newPassword)
+            await userDatabase.changePassword(user.id, passwordHash);
+            await sendNodemailer(email, newPassword)
+
+        } catch (error: any) {
             throw new CustomError(400, error.message);
         }
     }
 
-    getAll = async() => {
+    getAll = async () => {
         try {
             return await userDatabase.getAll()
-        } catch (error:any) {
+        } catch (error: any) {
             throw new Error(error.message || error.sqlMessage);
         }
 
     }
 
-    getById = async(token:string) => {
+    getById = async (token: string) => {
         try {
             if (!token) {
                 throw new Error("Missing authorization");
             }
-            let id:AuthenticationData = tokenGenerator.tokenData(token)
-            let userId:any = await userDatabase.checkIfExists(id.id)
-            userId=JSON.parse(JSON.stringify(userId))
-            
+            let id: AuthenticationData = tokenGenerator.tokenData(token)
+            let userId: any = await userDatabase.checkIfExists(id.id)
+            userId = JSON.parse(JSON.stringify(userId))
+
             if (userId[0].id !== id.id) {
                 throw new CustomError(400, "Token is invalid");
             }
             return await userDatabase.getById(id.id)
-        } catch (error:any) {
+        } catch (error: any) {
             throw new Error(error.message || error.sqlMessage);
         }
     }
