@@ -15,6 +15,8 @@ app.use("", recipeRouter)
 //ENDPOINT CRIAR SEGUIR
 app.use("",followRouter)
 
+app.use("/user", followRouter)
+
 //ENDPOINT FEED
 
 app.use("", feedRouter)

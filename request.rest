@@ -22,7 +22,7 @@ Content-Type: application/json
 
 {
     "email": "carolinemartins1109@gmail.com",
-    "password": "1234567"
+    "password": "fkqzpcb"
 }
 // Criar receitas
 ###
@@ -39,10 +39,10 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtN
 
 ###
 
-// Retorna os dados de um seguidor com autorização.
+// curtir
 POST http://localhost:3003/follow
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY0OTM3OSwiZXhwIjoxNjc2NjYzNzc5fQ.Ju-5GH29AnTIyg5R33I6xGFBRpCqOwIXN0NkCoEJqqk
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY1MzI3NywiZXhwIjoxNjc2NjY3Njc3fQ.tFh6P9lgS00R0_k6ybqRfC_UYXzBff8Bi9AiAumvyeQ
 
 {
     "followId":"99d42e70-d95e-47ac-a8f8-1f10eae22f8f"
@@ -55,7 +55,7 @@ PUT http://localhost:3003/forgot-password
 Content-Type: application/json
 
 {
-    "email": "bianca.paccola@gmail.com"
+    "email": "carolinemartins1109@gmail.com"
 
 }
 
@@ -84,3 +84,13 @@ Content-Type: application/json
 GET http://localhost:3003/my-feed 
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY0OTM3OSwiZXhwIjoxNjc2NjYzNzc5fQ.Ju-5GH29AnTIyg5R33I6xGFBRpCqOwIXN0NkCoEJqqk
+
+###
+// DESCURTIR USUARIO
+DELETE  http://localhost:3003/user/unfollow
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY1MzI3NywiZXhwIjoxNjc2NjY3Njc3fQ.tFh6P9lgS00R0_k6ybqRfC_UYXzBff8Bi9AiAumvyeQ
+
+{
+    "followId":"99d42e70-d95e-47ac-a8f8-1f10eae22f8f"
+}

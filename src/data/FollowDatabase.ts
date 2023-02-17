@@ -31,7 +31,6 @@ export class FollowDatabase extends BaseDatabase {
                     follow_id: followId
                 })
 
-            console.log(result[0]);
             return (result[0])
 
         } catch (error: any) {
@@ -50,9 +49,27 @@ export class FollowDatabase extends BaseDatabase {
         }
     }
 
-    delete = async ({ userId, followId }: InputFollowDTO) => {
+    getFollow =async({userId, followId}:InputFollowDTO)=>{
+        try{
+
+            const result = await FollowDatabase.connection()
+            .select("*")
+            .from(FollowDatabase.TABLE_NAME)
+            .where({
+                user_id: userId,
+                follow_id: followId
+            })
+
+        return (result[0])
+
+        }catch(error: any){
+            throw new CustomError(400, error.message || error.sqlMessage);
+        }
+    }
+
+    delete = async ({userId, followId}:InputFollowDTO) => {
         try {
-            await FollowDatabase.connection()
+          const result=  await FollowDatabase.connection()
                 .delete()
                 .from(FollowDatabase.TABLE_NAME)
                 .where({ user_id: userId, follow_id: followId })

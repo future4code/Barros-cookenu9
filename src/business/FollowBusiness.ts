@@ -49,8 +49,34 @@ export class FollowBusiness {
                 throw new CustomError(404, "No followers yet");
             }
             return result
-        } catch (error) {
+        } catch (error:any) {
+            throw new CustomError(400, error.message);
+        }
+    }
 
+    deleteFollow=async({userId,followId}:InputFollowDTO)=>{
+        try{
+            
+            if (!userId ) {
+                throw new CustomError(400, "invalid!  userId");
+            }
+            if (!followId) {
+                throw new CustomError(400, "invalid!  followId");
+            }
+
+            const idUserToken = tokenGenerator.tokenData(userId)
+
+            const verificationUserId = await followDatabase.getFollow({userId:idUserToken.id, followId})
+// console.log(verificationUserId);
+
+            if (verificationUserId === undefined) {
+                throw new CustomError(400, "Follow not exists");
+            } else {
+                await followDatabase.delete({userId:idUserToken.id, followId})
+            }
+
+        }catch(error:any){
+            throw new CustomError(400, error.message);
         }
     }
 }
