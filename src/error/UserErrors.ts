@@ -21,7 +21,7 @@ export class UserInvalidEmail extends CustomError {
 
 export class UserInvalidPassword extends CustomError {
     constructor() {
-        super(422, "Password must contain at least 7 characters.")
+        super(422, "Password must contain at least 6 characters.")
     }
 }
 
