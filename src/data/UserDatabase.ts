@@ -20,15 +20,27 @@ export class UserDatabase extends BaseDatabase {
         }
     }
 
-    getAll = async(email:string)=>{
+    getAll = async()=>{
         try{
-        const result = await UserDatabase.connection.raw(`
-            SELECT email FROM ${UserDatabase.TABLE_NAME} WHERE email=${email}
-        `)
+        const result = await UserDatabase.connection
+        .select('id', 'name')
+        .from(UserDatabase.TABLE_NAME)
         return (result)
 
         }catch(error:any){
             throw new CustomError(400, error.message || error.sqlMessage);
+        }
+    }
+
+    getById = async(id:string) => {
+        try {
+            const result = await UserDatabase.connection
+            .select()
+            .where({id})
+            .from(UserDatabase.TABLE_NAME)
+            return result
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);   
         }
     }
 
@@ -54,5 +66,12 @@ export class UserDatabase extends BaseDatabase {
         } catch (error:any) {
             throw new CustomError(400, error.message || error.sqlMessage);
         }
+    }
+    checkIfExists = async (id:string):Promise<UserDTO> => {
+        let result:UserDTO = await BaseDatabase.connection
+        .select()
+        .where({id})
+        .from(UserDatabase.TABLE_NAME)
+        return result
     }
 }

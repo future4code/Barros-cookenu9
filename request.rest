@@ -10,6 +10,11 @@ Content-Type: application/json
 }
 
 ###
+// Retorna todos os usuários cadastrados no banco de dados
+GET http://localhost:3003/all
+
+###
+
 
 // Login
 POST http://localhost:3003/login
@@ -25,24 +30,26 @@ Content-Type: application/json
 // Criar receita
 POST http://localhost:3003/recipe
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNWExNThiLTE1NzEtNDYyMC1iZGVkLWNjODliZTQyNWQ2NSIsImlhdCI6MTY3NjQxMjc5OCwiZXhwIjoxNjc2NDI3MTk4fQ.8tEMuwDXX7Q2770l30RY4lyIZK2BF4XwI1jXS6f0YDE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMzU2MywiZXhwIjoxNjc2NTI3OTYzfQ.57tIymx6FtxvsuuheQHmfh4mK-WDHI1cUU2sfR0_2gM
 
 {
-    "title": "Bolo de banana",
-    "description": "banana aveia canela acucar"
-
+    "title": "Brigadeiro",
+    "description": "Misture uma colher de manteiga com uma caixa de leite condensado, quatro colheres de achocolatado e misture até desgrudar da panela"
 }
 
 ###
 
+// Retorna os dados de um seguidor com autorização.
 POST http://localhost:3003/follow
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBiYTc5NWM5LTBlNGYtNGNkYi04ZTY1LTA2YzJiNDUxZWIxMSIsImlhdCI6MTY3NjQ3OTUwOCwiZXhwIjoxNjc2NDkzOTA4fQ._js7FKv4PMYsP3Jv7HzeLUdxLdgB1Wkj7JMf6aNSRx4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjU4OTkwMSwiZXhwIjoxNjc2NjA0MzAxfQ.ByBArZVRpdjDoO1Ul3vvpCwOP5um09NPwO5Adar0Cew
 
 {
     "followId":"72f25832-3249-44d3-bb14-5de2ec7da0d2"
+}
 
 
+###
 // Esqueci a senha
 PUT http://localhost:3003/forgot-password
 Content-Type: application/json
@@ -51,3 +58,29 @@ Content-Type: application/json
     "email": "bianca.paccola@gmail.com"
 
 }
+
+###
+
+// Retorna dados confidenciais de um usuário com a autorização concedida pelo token.
+GET http://localhost:3003/user
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU4NDA5MCwiZXhwIjoxNjc2NTk4NDkwfQ.HX4UKBaHhfOsnEr16sAsnNE--2Od3ef_BpfZmSCIOI8
+###
+
+// Obtenha as receitas de um usuário específico utilizando o seu token de acesso.
+GET http://localhost:3003/all-recipes
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMzU2MywiZXhwIjoxNjc2NTI3OTYzfQ.57tIymx6FtxvsuuheQHmfh4mK-WDHI1cUU2sfR0_2gM
+
+
+###
+
+// Retornar a lista de relações entre quem segue e quem é seguido.
+GET http://localhost:3003/all-followers
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/my-feed 
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjU4OTkwMSwiZXhwIjoxNjc2NjA0MzAxfQ.ByBArZVRpdjDoO1Ul3vvpCwOP5um09NPwO5Adar0Cew
