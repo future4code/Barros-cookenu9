@@ -49,4 +49,14 @@ export class FollowDatabase extends BaseDatabase {
 
         }
     }
+
+    delete = async()=>{
+        try{
+
+
+
+        }catch(error:any){
+            throw new CustomError(400, error.message || error.sqlMessage);
+        }
+    }
 }

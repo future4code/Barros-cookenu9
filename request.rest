@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
 
-    "name":"Bianca Paccola",
-    "email":"bianca.paccola@gmail.com",
-    "password":"123abc#"
+    "name":"Lorenzo Martins",
+    "email":"carolinemartins1109@gmail.com",
+    "password":"1234567"
 }
 
 ###
@@ -21,8 +21,8 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-    "email": "bianca.paccola@gmail.com",
-    "password": "w5glbr6"
+    "email": "carolinemartins1109@gmail.com",
+    "password": "1234567"
 }
 // Criar receitas
 ###
@@ -30,11 +30,11 @@ Content-Type: application/json
 // Criar receita
 POST http://localhost:3003/recipe
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMzU2MywiZXhwIjoxNjc2NTI3OTYzfQ.57tIymx6FtxvsuuheQHmfh4mK-WDHI1cUU2sfR0_2gM
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY0OTM3OSwiZXhwIjoxNjc2NjYzNzc5fQ.Ju-5GH29AnTIyg5R33I6xGFBRpCqOwIXN0NkCoEJqqk
 
 {
-    "title": "Brigadeiro",
-    "description": "Misture uma colher de manteiga com uma caixa de leite condensado, quatro colheres de achocolatado e misture até desgrudar da panela"
+    "title": "Bolo de cenoura ",
+    "description": "Em um liquidificador, adicione a cenoura, os ovos e o óleo, depois misture."
 }
 
 ###
@@ -42,10 +42,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUt
 // Retorna os dados de um seguidor com autorização.
 POST http://localhost:3003/follow
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjU4OTkwMSwiZXhwIjoxNjc2NjA0MzAxfQ.ByBArZVRpdjDoO1Ul3vvpCwOP5um09NPwO5Adar0Cew
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY0OTM3OSwiZXhwIjoxNjc2NjYzNzc5fQ.Ju-5GH29AnTIyg5R33I6xGFBRpCqOwIXN0NkCoEJqqk
 
 {
-    "followId":"72f25832-3249-44d3-bb14-5de2ec7da0d2"
+    "followId":"99d42e70-d95e-47ac-a8f8-1f10eae22f8f"
 }
 
 
@@ -64,13 +64,13 @@ Content-Type: application/json
 // Retorna dados confidenciais de um usuário com a autorização concedida pelo token.
 GET http://localhost:3003/user
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MmVlMGIwLTM1NDEtNDlmYy05MTg2LTQ4M2UxMmRjNGM2NyIsImlhdCI6MTY3NjU4NDA5MCwiZXhwIjoxNjc2NTk4NDkwfQ.HX4UKBaHhfOsnEr16sAsnNE--2Od3ef_BpfZmSCIOI8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY0OTM3OSwiZXhwIjoxNjc2NjYzNzc5fQ.Ju-5GH29AnTIyg5R33I6xGFBRpCqOwIXN0NkCoEJqqk
 ###
 
 // Obtenha as receitas de um usuário específico utilizando o seu token de acesso.
 GET http://localhost:3003/all-recipes
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjUxMzU2MywiZXhwIjoxNjc2NTI3OTYzfQ.57tIymx6FtxvsuuheQHmfh4mK-WDHI1cUU2sfR0_2gM
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY0OTM3OSwiZXhwIjoxNjc2NjYzNzc5fQ.Ju-5GH29AnTIyg5R33I6xGFBRpCqOwIXN0NkCoEJqqk
 
 
 ###
@@ -83,4 +83,4 @@ Content-Type: application/json
 
 GET http://localhost:3003/my-feed 
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5ZDQyZTcwLWQ5NWUtNDdhYy1hOGY4LTFmMTBlYWUyMmY4ZiIsImlhdCI6MTY3NjU4OTkwMSwiZXhwIjoxNjc2NjA0MzAxfQ.ByBArZVRpdjDoO1Ul3vvpCwOP5um09NPwO5Adar0Cew
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjZGM4MzcwLWJmNTEtNGRlYy04ODYzLTY0MGIxYmU0Zjc5MSIsImlhdCI6MTY3NjY0OTM3OSwiZXhwIjoxNjc2NjYzNzc5fQ.Ju-5GH29AnTIyg5R33I6xGFBRpCqOwIXN0NkCoEJqqk
