@@ -50,12 +50,15 @@ export class FollowDatabase extends BaseDatabase {
         }
     }
 
-    delete = async()=>{
-        try{
+    delete = async ({ userId, followId }: InputFollowDTO) => {
+        try {
+            await FollowDatabase.connection()
+                .delete()
+                .from(FollowDatabase.TABLE_NAME)
+                .where({ user_id: userId, follow_id: followId })
 
 
-
-        }catch(error:any){
+        } catch (error: any) {
             throw new CustomError(400, error.message || error.sqlMessage);
         }
     }
