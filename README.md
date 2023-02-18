@@ -19,14 +19,22 @@ Extra para facilitar testes:
 ---
 
 <h3 align="center">🛠 Ferramentas:</h3>
-- Typescript;</br>
-- Node.js;</br>
-- MySQL;</br>
-- Express;</br>
-- Uuid;</br>
-- JsonWebToken;</br>
-- Knex;</br>
-- Bcrypt;</br>
+- Typescript</br>
+- Node.js</br>
+- MySQL</br>
+- Express</br>
+- Uuid</br>
+- JsonWebToken</br>
+- Knex</br>
+- Bcrypt</br>
+
+---
+
+<h3 align="center"> ✒️ Pessoas Desenvolvedoras do Projeto</h3>
+
+|  [<img src="https://avatars.githubusercontent.com/u/102427205?v=4" width=115><br><sub>Bianca Paccola</sub>](https://github.com/BiancaPaccola) | [<img src="https://avatars.githubusercontent.com/u/102299433?v=4" width=115><br><sub>Caroline Martins</sub>](https://github.com/CarolineMartins09) |  [<img src="https://avatars.githubusercontent.com/u/102331990?v=4" width=115><br><sub>Lê Barros</sub>](https://github.com/FluffyThread) |
+| :---: | :---: | :---: |
+<br>
 
 ---
 
