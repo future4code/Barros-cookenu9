@@ -38,6 +38,19 @@ Extra para facilitar testes:
 
 ---
 
+<h3 align="center">🐱‍🚀 Documentação Postam:</h3>
+
+[---Documentação---]()
+
+
+---
+
+<h3 align="center"> 🔗 Link Render:</h3>
+
+[---LINK AQUI---]()
+
+---
+
 <h3 align="center">⚙️ Instruções para rodar o projeto:</h3>
 
 > O arquivo *requests.rest*, presente na pasta raiz do projeto, contém todos os endpoints com url do deploy disponível online (Render)
