@@ -27,26 +27,56 @@ export class FollowDatabase extends BaseDatabase {
                 .select("*")
                 .from(FollowDatabase.TABLE_NAME)
                 .where({
-                   user_id: userId,
-                   follow_id:followId
+                    user_id: userId,
+                    follow_id: followId
                 })
-                
-                console.log(result[0]);
+
             return (result[0])
 
         } catch (error: any) {
             throw new CustomError(400, error.message || error.sqlMessage);
         }
     }
-    getAll = async():Promise<FollowDTO[]> => {
+    getAll = async (): Promise<FollowDTO[]> => {
         try {
-            let result:FollowDTO[] = await FollowDatabase.connection
-            .select()
-            .from(FollowDatabase.TABLE_NAME)
+            let result: FollowDTO[] = await FollowDatabase.connection
+                .select()
+                .from(FollowDatabase.TABLE_NAME)
             return result
-        } catch (error:any) {
+        } catch (error: any) {
             throw new Error(error.message || error.sqlMessage);
-            
+
+        }
+    }
+
+    getFollow =async({userId, followId}:InputFollowDTO)=>{
+        try{
+
+            const result = await FollowDatabase.connection()
+            .select("*")
+            .from(FollowDatabase.TABLE_NAME)
+            .where({
+                user_id: userId,
+                follow_id: followId
+            })
+
+        return (result[0])
+
+        }catch(error: any){
+            throw new CustomError(400, error.message || error.sqlMessage);
+        }
+    }
+
+    delete = async ({userId, followId}:InputFollowDTO) => {
+        try {
+          const result=  await FollowDatabase.connection()
+                .delete()
+                .from(FollowDatabase.TABLE_NAME)
+                .where({ user_id: userId, follow_id: followId })
+
+
+        } catch (error: any) {
+            throw new CustomError(400, error.message || error.sqlMessage);
         }
     }
 }

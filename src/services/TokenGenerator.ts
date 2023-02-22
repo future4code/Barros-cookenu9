@@ -3,13 +3,13 @@ import { AuthenticationData } from '../model/userDTO'
 
 export class TokenGenerator {
 
-    public generateToken = ({id}:AuthenticationData) => {
+    public generateToken = ({ id }: AuthenticationData) => {
         const token = jwt.sign(
             { id },
             process.env.JWT_KEY as string,
             { expiresIn: "4h" }
-         )
-        return token 
+        )
+        return token
     }
 
     public tokenData = (token: string): AuthenticationData => {
@@ -18,6 +18,6 @@ export class TokenGenerator {
             process.env.JWT_KEY as string
         ) as jwt.JwtPayload
 
-        return {id: payload.id as string}
+        return { id: payload.id as string }
     }
 }

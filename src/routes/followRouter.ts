@@ -10,3 +10,5 @@ const followController = new FollowController()
 followRouter.post("/follow", followController.createFollow)
 
 followRouter.get("/all-followers", followController.getAll)
+
+followRouter.delete("/unfollow", followController.deleteFollow)

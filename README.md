@@ -6,14 +6,14 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 <h3 align="center" > 💻 Funcionalidades:</br></h3>
 ✅ Cadastrar pessoas usuária;</br>
 ✅ Login;</br>
-⬛ Informações do próprio perfil;</br>
+✅ Informações do próprio perfil;</br>
 ✅ Criar receitas;</br>
 ✅ Seguir usuários;</br>
-
-⬛ Feed</br>
-
-⬛ Alimentação</br>
+✅ Deixar de seguir usuários;</br>
+✅ Feed (vizualiza somente receitas de amigos);</br>
 ✅ Esqueceu senha;</br>
+Extra para facilitar testes:
+✅ Buscar todos usuários (Ps: precisa saber a senha para logar com ele pois estão criptografadas.);</br>
 
 
 ---

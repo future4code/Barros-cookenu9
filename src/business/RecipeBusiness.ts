@@ -36,16 +36,16 @@ export class RecipeBusiness {
         }
     }
 
-    getRecipes = async(token:string) => {
+    getRecipes = async (token: string) => {
         try {
             if (!token) {
                 throw new Error("Missing authorization");
             }
-            let id:AuthenticationData = tokenGenerator.tokenData(token)
+            let id: AuthenticationData = tokenGenerator.tokenData(token)
             return await recipeDatabase.getRecipes(id.id)
-        } catch (error:any) {
+        } catch (error: any) {
             throw new Error(error.message || error.sqlMessage);
-            
+
         }
     }
 }

@@ -16,7 +16,7 @@ export class FollowBusiness {
             if (!followId) {
                 throw new CustomError(400, 'Fill in the fields "followId"');
             }
-            if(followId === undefined){
+            if (followId === undefined) {
                 throw new CustomError(400, 'Fill in the fields "followId"');
             }
             const idUserToken = tokenGenerator.tokenData(userId)
@@ -26,15 +26,15 @@ export class FollowBusiness {
             const verificationUserId = await followDatabase.getById({ userId: idUserToken.id, followId: followId })
 
             if (verificationUserId === undefined) {
-               
+
                 const insertFollow: FollowDTO = {
                     id: idFollow,
                     userId: idUserToken.id,
                     followId: followId
                 }
-    
+
                 await followDatabase.create(insertFollow)
-            }else{
+            } else {
                 throw new CustomError(400, "Follow already exists");
             }
 
@@ -44,23 +44,39 @@ export class FollowBusiness {
     }
     getAll = async () => {
         try {
-            let result:FollowDTO[] = await followDatabase.getAll()
+            let result: FollowDTO[] = await followDatabase.getAll()
             if (result.length <= 0) {
                 throw new CustomError(404, "No followers yet");
             }
             return result
-        } catch (error) {
+        } catch (error:any) {
+            throw new CustomError(400, error.message);
+        }
+    }
+
+    deleteFollow=async({userId,followId}:InputFollowDTO)=>{
+        try{
             
+            if (!userId ) {
+                throw new CustomError(400, "invalid!  userId");
+            }
+            if (!followId) {
+                throw new CustomError(400, "invalid!  followId");
+            }
+
+            const idUserToken = tokenGenerator.tokenData(userId)
+
+            const verificationUserId = await followDatabase.getFollow({userId:idUserToken.id, followId})
+// console.log(verificationUserId);
+
+            if (verificationUserId === undefined) {
+                throw new CustomError(400, "Follow not exists");
+            } else {
+                await followDatabase.delete({userId:idUserToken.id, followId})
+            }
+
+        }catch(error:any){
+            throw new CustomError(400, error.message);
         }
     }
 }
-
-
-
-
-            // await followDatabase.create({
-            //     id: idFollow,
-            //     userId: idUserToken.id,
-            //     followId: followId
-            // })
-

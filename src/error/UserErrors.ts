@@ -1,10 +1,10 @@
 import { CustomError } from "./CustomError";
 
 export class UserIncompleteData extends CustomError {
-    constructor () {
+    constructor() {
         super(422, 'Fill in the fields: "email" and "password" ')
     }
-} 
+}
 
 export class UserMissingEmail extends CustomError {
     constructor() {
