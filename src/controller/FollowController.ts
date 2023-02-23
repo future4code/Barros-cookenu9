@@ -18,7 +18,7 @@ export class FollowController {
 
             await followBusiness.createFollow(create)
 
-            res.status(201).send({ message: "Follow created successfully!" })
+            res.status(201).send({ message: "The user is now a follower!" })
 
         } catch (error: any) {
             res.status(400).send(error.message);

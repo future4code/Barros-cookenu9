@@ -6,17 +6,17 @@ import { userRouter } from "./routes/userRouter";
 
 
 // ENDPOINT CRIAR USUARIO
-app.use("", userRouter)
+app.use("/user", userRouter)
 
 
 // ENDPOINT CRIAR RECEITA
-app.use("", recipeRouter)
+app.use("/recipe", recipeRouter)
 
 //ENDPOINT CRIAR SEGUIR
-app.use("",followRouter)
+app.use("/followers",followRouter)
 
-app.use("/user", followRouter)
+
 
 //ENDPOINT FEED
 
-app.use("", feedRouter)
+app.use("/feed", feedRouter)

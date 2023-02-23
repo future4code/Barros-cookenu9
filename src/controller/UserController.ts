@@ -18,7 +18,7 @@ export class UserController {
 
             const token = await userBusiness.signup(insert)
 
-            res.status(201).send(`access_token: ${token} `);
+            res.status(201).send(`"access_token": "${token}" `);
 
         } catch (error: any) {
             res.status(400).send(error.message);
