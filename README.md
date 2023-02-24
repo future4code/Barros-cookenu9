@@ -12,7 +12,7 @@ Esse produto nada mais é do que uma rede social, na qual os usuários podem div
 ✅ Deixar de seguir usuários;</br>
 ✅ Feed (vizualiza somente receitas de amigos);</br>
 ✅ Esqueceu senha;</br>
-Extra para facilitar testes:
+Extra para facilitar testes:</br>
 ✅ Buscar todos usuários (Ps: precisa saber a senha para logar com ele pois estão criptografadas.);</br>
 
 
@@ -32,8 +32,10 @@ Extra para facilitar testes:
 
 <h3 align="center"> ✒️ Pessoas Desenvolvedoras do Projeto</h3>
 
+
 |  [<img src="https://avatars.githubusercontent.com/u/102427205?v=4" width=115><br><sub>Bianca Paccola</sub>](https://github.com/BiancaPaccola) | [<img src="https://avatars.githubusercontent.com/u/102299433?v=4" width=115><br><sub>Caroline Martins</sub>](https://github.com/CarolineMartins09) |  [<img src="https://avatars.githubusercontent.com/u/69652623?v=4" width=115><br><sub>Lê Barros</sub>](https://github.com/FluffyThread) |
 | :---: | :---: | :---: |
+
 <br>
 
 ---

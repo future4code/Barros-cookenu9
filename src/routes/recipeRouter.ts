@@ -6,6 +6,6 @@ const recipeController = new RecipeController()
 
 
 // ENDPOINT CRIAR RECEITA
-recipeRouter.post("/recipe", recipeController.createRecipe)
+recipeRouter.post("/create-recipe", recipeController.createRecipe)
 
 recipeRouter.get("/all-recipes", recipeController.getRecipes)
