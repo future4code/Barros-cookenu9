@@ -35,7 +35,7 @@ export class FollowBusiness {
 
                 await followDatabase.create(insertFollow)
             } else {
-                throw new CustomError(400, "Follow already exists");
+                throw new CustomError(400, "User is already following this person.");
             }
 
         } catch (error: any) {
@@ -67,10 +67,10 @@ export class FollowBusiness {
             const idUserToken = tokenGenerator.tokenData(userId)
 
             const verificationUserId = await followDatabase.getFollow({userId:idUserToken.id, followId})
-// console.log(verificationUserId);
+
 
             if (verificationUserId === undefined) {
-                throw new CustomError(400, "Follow not exists");
+                throw new CustomError(400, "Is not possible to delete a relation that do not exists.");
             } else {
                 await followDatabase.delete({userId:idUserToken.id, followId})
             }

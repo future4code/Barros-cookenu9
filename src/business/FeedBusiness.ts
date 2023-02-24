@@ -24,7 +24,13 @@ export class FeedBusiness {
 
             }
 
-            return await feedDatabase.getFeed(followers)
+            let result = await feedDatabase.getFeed(followers)
+            if (result.length <= 0) {
+                return ("Feed is empty.");
+            } else {
+                return ({recipes: result})
+            }
+            
         } catch (error: any) {
             throw new Error(error.message || error.sqlMessage);
 
